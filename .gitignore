@@ -1,0 +1,6 @@
+results/
+data/
+*.fastq.gz
+*.bam
+*.fasta
+.snakemake/
