@@ -1,4 +1,4 @@
-rule fastqc_before:
+rule fastqc_raw:
     input:
         r1 = "FASTQ/raw/{sample}_1.fastq.gz",
         r2 = "FASTQ/raw/{sample}_2.fastq.gz"
@@ -10,7 +10,7 @@ rule fastqc_before:
     shell:
         "fastqc -t {threads} -o FastQC/raw/ {input.r1} {input.r2}"
 
-rule fastqc_after:
+rule fastqc_trimmed:
     input:
         r1 = "FASTQ/trimmed/{sample}_1.fastq.gz",
         r2 = "FASTQ/trimmed/{sample}_2.fastq.gz"
