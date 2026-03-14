@@ -1,18 +1,26 @@
 # Streptomyces Phylogenetics - Common Scab
 
 A Snakemake workflow for genome assembly, phylogenetic analysis, 
-and gene presence/absence of Streptomyces species associated with 
-common scab disease.
+& gene presence/absence for Streptomyces species associated with 
+common scab disease in potato.
 
 # Overview
 
-This pipeline processes paired-end Illumina reads through the following stages:
+This pipeline utilizes paired-end Illumina reads as initial input for the
+following steps:
 
-Stage 1: Raw read quality assessment (FastQC, MultiQC)
-Stage 2: Adapter and quality trimming (BBDuk)
-Stage 3: Post-trimming quality assessment (FastQC, MultiQC)
-Stage 4: Genome assembly (SPAdes)
-Stage 5: Phylogenetic analysis (FastANI, MLSA, BLAST)
+-Raw read quality assessment (FastQC, MultiQC)
+-Adapter and quality trimming (BBDuk)
+-Post-trimming quality assessment (FastQC, MultiQC)
+-Genome assembly (SPAdes)
+-Phylogenetic analysis (FastANI, MLSA, BLAST)
+
+Snakemake is a workflow management tool that facilitates organization and 
+reproducibility in bioinformatics workflows. Packages are designated via .yaml
+files ("envs" directory), and their corresponding parameters are found in .smk files in the "rules"
+directory. The "rule all" section of the Snakefile lists target (e.g., trimmed FASTQs, 
+scaffold FASTAs) outputs for the workflow, and Snakemake automatically determines which
+part(s) of the workflow to run, skipping any step whose output file already exists.
 
 # Dependencies
 
@@ -26,8 +34,6 @@ environment files in the `envs/` directory.
 - SPAdes
 - FastANI
 - BLAST
-
-
 
 ### Setup
 1.) Clone the repository and activate the Snakemake environment:
@@ -45,16 +51,29 @@ strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fas
 
 ### Running the Pipeline
 
-This pipeline is designed to be run in stages, allowing review of quality assessment results before proceeding to trimming and assembly. 
+This pipeline is designed to be run in 3 distinct stages: 1.) initial quality assessment of raw FASTQs; 
+2.) FASTQ trimming and quality assessment of trimmed reads; & 3.) genome assembly, phylogenetics, and gene
+presence/absence. By utilizing the comment mark (#) in the Snakefile, the workflow can be run stepwise, 
+permitting the review of MultiQC reports before and after trimming, before proceeding with genome assembly & 
+further analyses. To run the Snakemake workflow on a HPCC:
 
-Snakemake automatically skips any step whose output file already exists.
+```bash
+git clone https://github.com/matthewlfabian/Streptomyces-phylogenetics_common-scab.git
+snakemake --cores 10 --use-conda
+```
+
+At any stage, a "dry run" can be conducted to verify the logic of the workflow:
+
+To preview what Snakemake will run without executing anything:
+```bash
+snakemake --dry-run --cores 10 --use-conda
+```
+
 
 #### Stage 1: Raw read quality assessment
 Run FastQC and MultiQC on raw reads, then review the MultiQC report 
 before proceeding to trimming:
-```bash
-snakemake --cores 10 --use-conda
-```
+
 Review `MultiQC/raw/multiqc_report.html` before continuing.
 
 #### Stage 2 onwards: Trimming and assembly
@@ -70,12 +89,6 @@ Rerun the pipeline — Snakemake will skip completed steps and only
 run the newly uncommented targets.
 
 Repeat this process for each subsequent stage.
-
-### Dry Run
-To preview what Snakemake will run without executing anything:
-```bash
-snakemake --dry-run --cores 10 --use-conda
-```
 
 ### Visualize the Pipeline
 To generate a DAG image of the workflow:
