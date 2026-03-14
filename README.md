@@ -35,7 +35,7 @@ environment files in the `envs/` directory.
 - FastANI
 - BLAST
 
-### Setup
+# Setup
 1.) Clone the repository and activate the Snakemake environment:
 
   git clone https://github.com/yourusername/Streptomyces-phylogenetics_common-scab.git
@@ -49,7 +49,9 @@ strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fas
     - SAMPLE2
     - ...
 
-### Running the Pipeline
+3.) TBC
+
+# Running the Pipeline
 
 This pipeline is designed to be run in 3 distinct stages: 1.) initial quality assessment of raw FASTQs; 
 2.) FASTQ trimming and quality assessment of trimmed reads; & 3.) genome assembly, phylogenetics, and gene
@@ -58,7 +60,6 @@ permitting the review of MultiQC reports before and after trimming, before proce
 further analyses. To run the Snakemake workflow on a HPCC:
 
 ```bash
-git clone https://github.com/matthewlfabian/Streptomyces-phylogenetics_common-scab.git
 snakemake --cores 10 --use-conda
 ```
 
