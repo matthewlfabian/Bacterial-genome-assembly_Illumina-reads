@@ -49,8 +49,6 @@ strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fas
     - SAMPLE2
     - ...
 
-3.) TBC
-
 # Running the Pipeline
 
 This pipeline is designed to be run in 3 distinct stages: 1.) initial quality assessment of raw FASTQs; 
@@ -79,8 +77,8 @@ snakemake --dag | dot -Tpng > docs/dag.png
 
 
 #### Stage 1: Raw read quality assessment
-Run FastQC and MultiQC on raw reads, then review the MultiQC report 
-before proceeding to trimming:
+To FastQC and MultiQC on raw reads, then review the MultiQC report 
+before proceeding to trimming, "comment out" 
 
 Review `MultiQC/raw/multiqc_report.html` before continuing.
 
