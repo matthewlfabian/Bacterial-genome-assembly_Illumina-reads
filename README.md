@@ -8,11 +8,11 @@ bacterial genomes.
 This pipeline utilizes paired-end Illumina reads as initial input for the
 following steps:
 
--Raw read quality assessment (FastQC, MultiQC)
--Adapter and quality trimming (BBDuk)
--Post-trimming quality assessment (FastQC, MultiQC)
--Genome assembly (SPAdes)
--Assembly quality assessment (QUAST, Prodigal)
+- Raw read quality assessment (FastQC, MultiQC)
+- Adapter and quality trimming (BBDuk)
+- Post-trimming quality assessment (FastQC, MultiQC)
+- Genome assembly (SPAdes)
+- Assembly quality assessment (QUAST, Prodigal)
 
 Snakemake is a workflow management tool that facilitates organization and 
 reproducibility in bioinformatics workflows. Packages are designated via .yaml
