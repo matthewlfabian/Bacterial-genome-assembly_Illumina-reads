@@ -37,6 +37,7 @@ environment files in the `envs/` directory.
 1.) Clone the repository and activate the Snakemake environment:
 
   git clone https://github.com/matthewlfabian/Bacterial-genome-assembly_Illumina-reads.git
+  
   conda activate snakemake
 
 2.) Verify the installed repository:
