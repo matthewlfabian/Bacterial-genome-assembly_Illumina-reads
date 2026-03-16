@@ -36,10 +36,14 @@ environment files in the `envs/` directory.
 # Setup
 1.) Clone the repository and activate the Snakemake environment:
 
-  git clone https://github.com/yourusername/Streptomyces-phylogenetics_common-scab.git
+  git clone https://github.com/matthewlfabian/Bacterial-genome-assembly_Illumina-reads.git
   conda activate snakemake
 
-2.) Edit `config/config.yaml` to include your strain/sample names. For example, for paired-end reads, 
+2.) Verify the installed repository:
+
+  git remote -v
+
+3.) Edit `config/config.yaml` to include your strain/sample names. For example, for paired-end reads, 
 strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fastq.gz, <strain_1>_2.fastq.gz, <strain_2>_2.fastq.gz...
 
   samples:
