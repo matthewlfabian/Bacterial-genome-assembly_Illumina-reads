@@ -10,8 +10,8 @@ rule BBDuk:
         r1 = "FASTQ/raw/{sample}_1.fastq.gz",
         r2 = "FASTQ/raw/{sample}_2.fastq.gz"
     output:
-        r1 = "FASTQ/trimmed/{sample}_clean_1.fastq.gz",
-        r2 = "FASTQ/trimmed/{sample}_clean_2.fastq.gz"
+        r1 = "FASTQ/trimmed/{sample}_1.fastq.gz",
+        r2 = "FASTQ/trimmed/{sample}_2.fastq.gz"
     conda: "../envs/BBDuk.yaml"
     shell:
         "bbduk.sh in1={input.r1} in2={input.r2} "
