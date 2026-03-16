@@ -1,8 +1,7 @@
-# Streptomyces Phylogenetics - Common Scab
+# Bacterial genome assembly from Illumina reads
 
-A Snakemake workflow for genome assembly, phylogenetic analysis, 
-& gene presence/absence for Streptomyces species associated with 
-common scab disease in potato.
+A Snakemake workflow for assembly, including FASTQ quality assessment and trimming, for 
+bacterial genomes.
 
 # Overview
 
@@ -13,7 +12,7 @@ following steps:
 -Adapter and quality trimming (BBDuk)
 -Post-trimming quality assessment (FastQC, MultiQC)
 -Genome assembly (SPAdes)
--Phylogenetic analysis (FastANI, MLSA, BLAST)
+-Assembly quality assessment (QUAST, Prodigal)
 
 Snakemake is a workflow management tool that facilitates organization and 
 reproducibility in bioinformatics workflows. Packages are designated via .yaml
@@ -27,13 +26,12 @@ part(s) of the workflow to run, skipping any step whose output file already exis
 All dependencies are managed automatically via Conda using the 
 environment files in the `envs/` directory.
 
-- Snakemake v9.16.3
 - FastQC
 - MultiQC
 - BBDuk
 - SPAdes
-- FastANI
-- BLAST
+- QUAST
+- Prodigal
 
 # Setup
 1.) Clone the repository and activate the Snakemake environment:
@@ -52,8 +50,8 @@ strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fas
 # Running the Pipeline
 
 This pipeline is designed to be run in 3 stages: 1.) initial quality assessment of raw FASTQs; 
-2.) FASTQ trimming and quality assessment of trimmed reads; & 3.) genome assembly, phylogenetics, and gene
-presence/absence. By utilizing the comment mark (#) in the Snakefile, the workflow can be run stepwise, 
+2.) FASTQ trimming and quality assessment of trimmed reads; & 3.) genome assembly and quality assessment. 
+By utilizing the comment mark (#) in the Snakefile, the workflow can be run stepwise, 
 permitting the review of MultiQC reports before and after trimming, before proceeding with genome assembly & 
 further analyses. To run the Snakemake workflow on a HPCC:
 
@@ -87,7 +85,7 @@ To proceed with trimming and a subsequent MultiQC report, "uncomment" Stage 2
 in the Snakefile & run Snakemake. Review `MultiQC/trimmed/multiqc_report.html` before 
 continuing.
 
-#### Stage 3: Assembly, phylogenetics, & gene presence/absence
+#### Stage 3: Assembly & quality assessment
 To proceed with assembly & analyses, "uncomment" Stage 3 in the Snakefile & run
 Snakemake. Individual steps can be "commented out" as desired, e.g., if assembly
 parameters are to be adjusted & tested before continuing with subsequent analyses.
