@@ -92,7 +92,7 @@ Snakemake.
 # Adjusting parameters
 By editing the .smk files for each package in the "rules" subdirectory, parameters can be 
 individually adjusted as desired. For example, to adjust k-mer utilization for assembly 
-via SPAdes, open SPAdes.smk & edit the "-k" parameter. Using the Snakefile, #TBD
+via SPAdes, open SPAdes.smk & edit the "-k" parameter.
 
 
 # Directory Structure
