@@ -7,7 +7,6 @@ rule QUAST:
         reference = config["quast_reference"]
     output:
         "QUAST/{sample}/report.html"
-    threads: 8
     conda: "../envs/QUAST.yaml"
     shell:
         "quast.py {input.scaffolds} "
