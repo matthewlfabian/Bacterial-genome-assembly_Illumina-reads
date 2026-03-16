@@ -1,6 +1,9 @@
+# add your sample (e.g., "strain_01") & reference (e.g., "ref_genome") names below
+
 samples:
   - ID01-13C
   - ID01-8A
 
 read_extension: "fastq.gz"
 outdir: "FASTQ/trimmed"
+quast_reference: "QUAST/S_scabiei.fasta"
