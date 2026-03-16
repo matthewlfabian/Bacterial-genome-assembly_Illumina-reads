@@ -86,9 +86,8 @@ in the Snakefile & run Snakemake. Review `MultiQC/trimmed/multiqc_report.html` b
 continuing.
 
 #### Stage 3: Assembly & quality assessment
-To proceed with assembly & analyses, "uncomment" Stage 3 in the Snakefile & run
-Snakemake. Individual steps can be "commented out" as desired, e.g., if assembly
-parameters are to be adjusted & tested before continuing with subsequent analyses.
+To proceed with assembly & QC, "uncomment" Stage 3 in the Snakefile & run
+Snakemake.
 
 # Adjusting parameters
 By editing the .smk files for each package in the "rules" subdirectory, parameters can be 
