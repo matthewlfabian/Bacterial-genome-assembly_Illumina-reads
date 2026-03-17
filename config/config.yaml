@@ -7,3 +7,4 @@ samples:
 read_extension: "fastq.gz"
 outdir: "FASTQ/trimmed"
 QUAST_reference: "QUAST/S_scabiei.fasta"
+prokka_proteins: "Prokka/ref_FAAs/combined.faa"
