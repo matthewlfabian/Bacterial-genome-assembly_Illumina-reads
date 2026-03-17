@@ -16,4 +16,4 @@ rule MultiQC_trimmed:
         "MultiQC/trimmed/multiqc_report.html"
     conda: "../envs/MultiQC.yaml"
     shell:
-        "multiqc FastQC/raw/ -o MultiQC/raw/"
+        "multiqc FastQC/trimmed/ -o MultiQC/trimmed/"
