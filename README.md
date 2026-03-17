@@ -16,11 +16,11 @@ following steps:
 - Assembly quality assessment (QUAST)
 - Annotation (Prokka)
 
-Snakemake is a workflow management tool that facilitates organization and 
+Snakemake is a workflow management tool that facilitates organization & 
 reproducibility in bioinformatics workflows. Packages are designated via .yaml
-files ("envs" directory), and their corresponding parameters are found in .smk files in the "rules"
+files ("envs" directory), & their corresponding parameters are found in .smk files in the "rules"
 directory. The "rule all" section of the Snakefile lists target (e.g., trimmed FASTQs, 
-scaffold FASTAs) outputs for the workflow, and Snakemake automatically determines which
+scaffold FASTAs) outputs for the workflow, & Snakemake automatically determines which
 part(s) of the workflow to run, skipping any step whose output file already exists.
 
 # Dependencies
@@ -57,11 +57,11 @@ strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fas
 
 # Running the Pipeline
 
-This pipeline is designed to be run in 3 stages: 1.) initial quality assessment of raw FASTQs; 
-2.) FASTQ trimming and quality assessment of trimmed reads; & 3.) genome assembly and quality assessment. 
-By utilizing the comment mark (#) in the Snakefile, the workflow can be run stepwise, 
-permitting the review of MultiQC reports before and after trimming, before proceeding with genome assembly & 
-further analyses. To run the Snakemake workflow on a HPCC:
+This pipeline is designed to be run in 4 stages: 1.) initial quality assessment of raw FASTQs; 
+2.) FASTQ trimming and quality assessment of trimmed reads; 3.) genome assembly and quality assessment; 
+& 4.) genome annotation. By utilizing the comment mark (#) in the Snakefile, the workflow can be run stepwise, 
+permitting the review of FastQC, MultiQC, & QUAST QC reports before subsequent steps. The workflow can be run 
+in full by "uncommenting" all stages in the Snakefile. To run the Snakemake workflow on a HPCC:
 
 ```bash
 snakemake --cores 10 --use-conda
@@ -84,8 +84,8 @@ snakemake --dag | dot -Tpng > docs/dag.png
 
 #### Stage 1: Raw read quality assessment
 To FastQC and MultiQC on raw reads, then review the MultiQC report 
-before proceeding to FASTQ trimming, "comment out" (i.e., add "#") Stages 2 & 3 
-in the Snakefile & run Snakemake. Review `MultiQC/raw/multiqc_report.html` 
+before proceeding to FASTQ trimming, "comment out" (add "#") Stages 2-4
+in the Snakefile, "rules" section, & run Snakemake. Review `MultiQC/raw/multiqc_report.html` 
 before continuing.
 
 #### Stage 2: Trimming & trimmed read quality assessment
@@ -95,6 +95,10 @@ continuing.
 
 #### Stage 3: Assembly & quality assessment
 To proceed with assembly & QC, "uncomment" Stage 3 in the Snakefile & run
+Snakemake.
+
+#### Stage 4: Annotation
+To proceed with annotation, "uncomment" Stage 4 in the Snakefile & run
 Snakemake.
 
 # Adjusting parameters
