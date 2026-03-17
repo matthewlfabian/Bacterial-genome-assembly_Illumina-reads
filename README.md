@@ -1,7 +1,8 @@
-# Bacterial genome assembly from Illumina reads
+# Bacterial genome assembly & annotation from Illumina reads
 
-A Snakemake workflow for assembly, including FASTQ quality assessment and trimming, for 
-bacterial genomes.
+A Snakemake workflow for assembly & annotation of bacterial genomes from Illumina 
+reads. FASTQs are submitted for quality assessment before trimming and reassessment, 
+followed by assembly and annotation.
 
 # Overview
 
@@ -12,7 +13,8 @@ following steps:
 - Adapter and quality trimming (BBDuk)
 - Post-trimming quality assessment (FastQC, MultiQC)
 - Genome assembly (SPAdes)
-- Assembly quality assessment (QUAST, Prodigal)
+- Assembly quality assessment (QUAST)
+- Annotation (Prokka)
 
 Snakemake is a workflow management tool that facilitates organization and 
 reproducibility in bioinformatics workflows. Packages are designated via .yaml
@@ -32,6 +34,7 @@ environment files in the `envs/` directory.
 - SPAdes
 - QUAST
 - Prodigal
+- Prokka
 
 # Setup
 1.) Clone the repository and activate the Snakemake environment:
