@@ -107,12 +107,14 @@ individually adjusted as desired. For example, to adjust k-mer utilization for a
 via SPAdes, open SPAdes.smk & edit the "-k" parameter.
 
 
-## Author
+# Other information
+
+### Author
 
 Matthew L. Fabian, Ph.D.
 
 
-## References
+### References
 
 Andrews, S. (2010). FastQC: A quality control tool for high throughput sequence data. Babraham Bioinformatics. https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
