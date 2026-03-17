@@ -109,9 +109,8 @@ via SPAdes, open SPAdes.smk & edit the "-k" parameter.
 
 ## Author
 
-Matthew Fabian
-Postdoctoral Scholar, Plant Pathology & Molecular Biology
-USDA-ARS
+Matthew L. Fabian, Ph.D.
+
 
 ## References
 
