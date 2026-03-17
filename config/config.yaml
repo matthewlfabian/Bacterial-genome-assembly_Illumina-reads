@@ -6,4 +6,4 @@ samples:
 
 read_extension: "fastq.gz"
 outdir: "FASTQ/trimmed"
-quast_reference: "QUAST/S_scabiei.fasta"
+QUAST_reference: "QUAST/S_scabiei.fasta"
