@@ -8,6 +8,7 @@ include: "rules/FastQC.smk"
 include: "rules/MultiQC.smk"
 include: "rules/BBDuk.smk"
 include: "rules/SPAdes.smk"
+include: "rules/QUAST.smk"
 
 rule all:
     input:
