@@ -7,8 +7,8 @@
 
 rule SPAdes:
     input:
-        r1 = config["outdir"] + "/{sample}_clean_1.fastq.gz",
-        r2 = config["outdir"] + "/{sample}_clean_2.fastq.gz"
+        r1 = config["outdir"] + "/{sample}_1.fastq.gz",
+        r2 = config["outdir"] + "/{sample}_2.fastq.gz"
     output:
         "SPAdes/{sample}/scaffolds.fasta"
     threads: 64
