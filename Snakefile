@@ -9,6 +9,7 @@ include: "rules/MultiQC.smk"
 include: "rules/BBDuk.smk"
 include: "rules/SPAdes.smk"
 include: "rules/QUAST.smk"
+include: "rules/Prokka.smk"
 
 rule all:
     input:
@@ -22,6 +23,10 @@ rule all:
         expand("FastQC/trimmed/{sample}_1_fastqc.html", sample=SAMPLES),
         expand("FastQC/trimmed/{sample}_2_fastqc.html", sample=SAMPLES),
         "MultiQC/trimmed/multiqc_report.html",
-    # Stage 3: assembly and QC assessment; uncomment to continue
+    # Stage 3: assembly & QC assessment; uncomment to continue
         expand("SPAdes/{sample}/scaffolds.fasta", sample=SAMPLES),
         expand("QUAST/{sample}/report.html", sample=SAMPLES),
+    # Stage 4: annotation; uncomment to continue
+        expand("Prokka/{sample}/{sample}.gff", sample=SAMPLES),
+        expand("Prokka/{sample}/{sample}.faa", sample=SAMPLES),
+        expand("Prokka/{sample}/{sample}.gbk", sample=SAMPLES),
