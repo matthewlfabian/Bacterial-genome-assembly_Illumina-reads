@@ -4,7 +4,7 @@
 rule QUAST:
     input:
         scaffolds = "SPAdes/{sample}/scaffolds.fasta",
-        reference = config["quast_reference"]
+        reference = config["QUAST_reference"]
     output:
         "QUAST/{sample}/report.html"
     conda: "../envs/QUAST.yaml"
