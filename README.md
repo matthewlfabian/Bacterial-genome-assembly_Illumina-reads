@@ -107,27 +107,24 @@ individually adjusted as desired. For example, to adjust k-mer utilization for a
 via SPAdes, open SPAdes.smk & edit the "-k" parameter.
 
 
-# Directory Structure
-```
-Streptomyces-phylogenetics_common-scab/
-├── Snakefile
-├── config/
-│   └── config.yaml
-├── envs/
-│   ├── FastQC.yaml
-│   ├── MultiQC.yaml
-│   └── BBDuk.yaml
-├── rules/
-│   ├── fastqc.smk
-│   ├── MultiQC.smk
-│   └── bbduk.smk
-├── docs/
-│   └── dag.png
-└── README.md
-```
-
 ## Author
 
 Matthew Fabian
-[Institution]
-[Contact]
+Postdoctoral Scholar, Plant Pathology & Molecular Biology
+USDA-ARS
+
+## References
+
+Andrews, S. (2010). FastQC: A quality control tool for high throughput sequence data. Babraham Bioinformatics. https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+
+Bankevich, A., et al. (2012). SPAdes: A new genome assembly algorithm and its applications to single-cell sequencing. Journal of Computational Biology, 19(5), 455–477. https://doi.org/10.1089/cmb.2012.0021
+
+Bushnell, B. (2014). BBTools software package. http://sourceforge.net/projects/bbtools/
+
+Ewels, P., et al. (2016). MultiQC: Summarize analysis results for multiple tools and samples in a single report. Bioinformatics, 32(19), 3047–3048. https://doi.org/10.1093/bioinformatics/btw354
+
+Gurevich, A., et al. (2013). QUAST: Quality assessment tool for genome assemblies. Bioinformatics, 29(8), 1072–1075. https://doi.org/10.1093/bioinformatics/btt086
+
+Mölder, F., et al. (2021). Sustainable data analysis with Snakemake. F1000Research, 10, 33. https://doi.org/10.12688/f1000research.29032.2
+
+Seemann, T. (2014). Prokka: Rapid prokaryotic genome annotation. Bioinformatics, 30(14), 2068–2069. https://doi.org/10.1093/bioinformatics/btu153
