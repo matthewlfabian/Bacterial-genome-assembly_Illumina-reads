@@ -47,8 +47,8 @@ environment files in the `envs/` directory.
 
   git remote -v
 
-3.) Edit `config/config.yaml` to include your strain/sample names. For example, for paired-end reads, 
-strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fastq.gz, <strain_1>_2.fastq.gz, <strain_2>_2.fastq.gz...
+3.) Edit "config/config.yaml" to include your strain/sample names. For example, for paired-end reads, 
+strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fastq.gz, <strain_1>_2.fastq.gz, <strain_2>_2.fastq.gz, etc.
 
   samples:
     - SAMPLE1
@@ -57,6 +57,8 @@ strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fas
 
 4.) In your parent directory, create the subdirectories "FASTQ" & "FASTQ/raw", then place your raw FASTQ files (matching the sample
   names above) in FASTQ/raw.
+
+5.) In your parent directory, create the 
 
 # Running the Pipeline
 
