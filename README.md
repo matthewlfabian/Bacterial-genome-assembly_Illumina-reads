@@ -83,7 +83,7 @@ snakemake --dag | dot -Tpng > docs/dag.png
 
 
 #### Stage 1: Raw read quality assessment
-To FastQC and MultiQC on raw reads, then review the MultiQC report 
+To run FastQC and MultiQC on raw reads, then review the MultiQC report 
 before proceeding to FASTQ trimming, "comment out" (add "#") Stages 2-4
 in the Snakefile, "rules" section, & run Snakemake. Review `MultiQC/raw/multiqc_report.html` 
 before continuing.
