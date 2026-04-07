@@ -37,7 +37,7 @@ environment files in the `envs/` directory.
 - Prokka
 
 # Setup
-1.) Clone the repository and activate the Snakemake environment:
+1.) Create a directory (e.g., "assembly"), & in that directory, clone the repository and activate the Snakemake environment:
 
   git clone https://github.com/matthewlfabian/Bacterial-genome-assembly_Illumina-reads.git
   
@@ -54,6 +54,9 @@ strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fas
     - SAMPLE1
     - SAMPLE2
     - ...
+
+4.) In your parent directory, create the subdirectories "FASTQ" & "FASTQ/raw", then place your raw FASTQ files (matching the sample
+  names above) in FASTQ/raw.
 
 # Running the Pipeline
 
