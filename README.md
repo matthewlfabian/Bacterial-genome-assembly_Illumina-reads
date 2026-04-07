@@ -2,7 +2,8 @@
 
 A Snakemake workflow for assembly & annotation of bacterial genomes from Illumina 
 reads. FASTQs are submitted for quality assessment before trimming and reassessment, 
-followed by assembly and annotation.
+followed by assembly and annotation. Users supply raw, paired-end Illumina reads in FASTQ
+format, as well as nucleotide and amino acid FASTA files for a reference genome.
 
 # Overview
 
@@ -37,7 +38,7 @@ environment files in the `envs/` directory.
 - Prokka
 
 # Setup
-1.) Create a directory (e.g., "assembly"), & in that directory, clone the repository and activate the Snakemake environment:
+1.) Create a parent directory (e.g., "assembly"), & in that directory, clone the repository and activate the Snakemake environment:
 
   git clone https://github.com/matthewlfabian/Bacterial-genome-assembly_Illumina-reads.git
   
@@ -58,7 +59,12 @@ strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fas
 4.) In your parent directory, create the subdirectories "FASTQ" & "FASTQ/raw", then place your raw FASTQ files (matching the sample
   names above) in FASTQ/raw.
 
-5.) In your parent directory, create the 
+5.) Edit "config/config.yaml" to include the nucleotide (QUAST_reference: "QUAST/<your reference>.fasta") & amino acid
+(Prokka_proteins: "Prokka/<your reference>.faa") FASTAs for your reference genome.
+
+6.) In your parent directory, create the subdirectories "QUAST" & "Prokka". In "QUAST", add your nucleotide reference genome FASTA 
+(<your reference>.fasta). In "Prokka", add your amino acid reference genome FASTA (<your reference>.faa). The file names must match
+those entered into "config/config/yaml" in step 5.).
 
 # Running the Pipeline
 
