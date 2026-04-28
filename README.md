@@ -1,6 +1,6 @@
 # Bacterial genome assembly & annotation from Illumina reads
 
-A Snakemake workflow for assembly & annotation of bacterial genomes from Illumina 
+Snakemake workflow for assembly & annotation of bacterial genomes from Illumina 
 reads. FASTQs are submitted for quality assessment before trimming and reassessment, 
 followed by assembly and annotation. Users supply raw, paired-end Illumina reads in FASTQ
 format, as well as nucleotide and amino acid FASTA files for a reference genome.
