@@ -34,17 +34,16 @@ environment files in the `envs/` directory.
 - BBDuk
 - SPAdes
 - QUAST
-- Prodigal
 - Prokka
 
 # Setup
-1.) Create a parent directory (e.g., "assembly"), & in that directory, clone the repository and activate the Snakemake environment:
+1.) In a directory of your choice, clone the repository which creates a new directory for the Snakemake workflow, & activate Snakemake:
 
   git clone https://github.com/matthewlfabian/Bacterial-genome-assembly_Illumina-reads.git
   
   conda activate snakemake
 
-2.) Verify the installed repository:
+2.) Browse to the newly created directory & verify the installed repository:
 
   git remote -v
 
@@ -56,13 +55,13 @@ strain/sample names from FASTQ files are identified as follows: <strain_1>_1.fas
     - SAMPLE2
     - ...
 
-4.) In your parent directory, create the subdirectories "FASTQ" & "FASTQ/raw", then place your raw FASTQ files (matching the sample
+4.) In your Snakemake directory, create the subdirectories "FASTQ" & "FASTQ/raw", then place your raw FASTQ files (matching the sample
   names above) in FASTQ/raw.
 
 5.) Edit "config/config.yaml" to include the nucleotide (QUAST_reference: "QUAST/<your reference>.fasta") & amino acid
 (Prokka_proteins: "Prokka/<your reference>.faa") FASTAs for your reference genome.
 
-6.) In your parent directory, create the subdirectories "QUAST" & "Prokka". In "QUAST", add your nucleotide reference genome FASTA 
+6.) In your Snakemake directory, create the subdirectories "QUAST" & "Prokka". In "QUAST", add your nucleotide reference genome FASTA 
 (<your reference>.fasta). In "Prokka", add your amino acid reference genome FASTA (<your reference>.faa). The file names must match
 those entered into "config/config/yaml" in step 5.).
 
@@ -72,7 +71,8 @@ This pipeline is designed to be run in 4 stages: 1.) initial quality assessment 
 2.) FASTQ trimming and quality assessment of trimmed reads; 3.) genome assembly and quality assessment; 
 & 4.) genome annotation. By utilizing the comment mark (#) in the Snakefile, the workflow can be run stepwise, 
 permitting the review of FastQC, MultiQC, & QUAST QC reports before subsequent steps. The workflow can be run 
-in full by "uncommenting" all stages in the Snakefile. To run the Snakemake workflow on a HPCC:
+in full by "uncommenting" all stages in the Snakefile. To run the Snakemake workflow on a HPCC, navigate to the 
+Snakemake directory containing the repository & user-added directories & files, then run the following:
 
 ```bash
 snakemake --cores 10 --use-conda
